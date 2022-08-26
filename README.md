@@ -124,7 +124,9 @@ Here are some ideas to get you started:
 
 ----
 <div align="center">Generated using <a href="https://profilinator.rishav.dev/" target="_blank">Github Profilinator</a></div>
-<div align="center">
+
+
 ## Leetcode Stats
+<div align="center">
 ![LeetCode Stats](https://leetcode.card.workers.dev/proprogrammer22?theme=dark&font=baloo&extension=activity&ext=contest)
 </div>
