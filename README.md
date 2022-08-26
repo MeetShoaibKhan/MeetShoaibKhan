@@ -128,5 +128,7 @@ Here are some ideas to get you started:
 
 ## Leetcode Stats
 <div align="center">
+
 ![LeetCode Stats](https://leetcode.card.workers.dev/proprogrammer22?theme=dark&font=baloo&extension=activity&ext=contest)
+  
 </div>
