@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 ### <div align="center">I'm Shoaib Khan</div>  
 
 
-- 🔭 I’m currently working on [E-commerce Website](https://github.com/MeetShoaibKhan/E-commerce-MERN)
+- 🔭 I’m currently working on [E-commerce Website](https://github.com/MeetShoaibKhan/E-commerce-MERN) and Bug Tracker Webapp
 - 🌱 I’m currently learning React, Redux and AWS.
 - 🤔 I’m looking for <b>Internship</b> in a respected software house.
 - 🗣 I speak English, Urdu and Pashto
