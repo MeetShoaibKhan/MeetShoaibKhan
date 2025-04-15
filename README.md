@@ -1,32 +1,38 @@
-# Hi, I'm Shoaib Khan 👋
+# ✨ Shoaib Khan 
 
-Full-Stack Developer specializing in JavaScript technologies. I build web applications with React, Node.js, and modern frameworks.
+**Full-Stack Developer** | **JavaScript Specialist** | **Problem Solver**
 
-## 🔧 Technologies
+Building elegant solutions with modern web technologies. Passionate about clean architecture and performant applications.
 
-**Frontend:**  
-React, JavaScript, HTML/CSS, Redux
+---
 
-**Backend:**  
-Node.js, Express, NestJS, Python, Flask
+### 🛠️  Tech Stack
 
-**Databases:**  
-MySQL, MongoDB
+**Frontend**  
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white)
 
-**DevOps & Cloud:**  
-AWS, Git, Docker
+**Backend**  
+![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white)
+![NestJS](https://img.shields.io/badge/-NestJS-E0234E?logo=nestjs&logoColor=white)
 
-**Machine Learning:**  
-TensorFlow, OpenCV (for research projects)
+**Data & Cloud**  
+![AWS](https://img.shields.io/badge/-AWS-232F3E?logo=amazon-aws&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white)
 
-## 🌱 Currently Learning
-- Advanced React patterns
-- AWS cloud architecture
-- Performance optimization
+---
 
-## 📫 Let's Connect
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/MeetShoaibKhan)
+### 🌱  Currently Growing In
+- Microservices architecture
+- Serverless patterns
+- Advanced React performance
 
-## 📊 GitHub Stats
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=MeetShoaibKhan&show_icons=true&theme=radical)
+---
+
+### 📬  Let's Connect
+
+[![LinkedIn](https://img.shields.io/badge/-Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/shoaibkhan7)
+[![Email](https://img.shields.io/badge/-Email%20Me-D14836?style=for-the-badge&logo=gmail)](mailto:meetshoaibkhan1@gmail.com)
