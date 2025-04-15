@@ -26,6 +26,7 @@ Building elegant solutions with modern web technologies. Passionate about clean 
 ---
 
 ### 🌱  Currently Growing In
+- Next.js framework
 - Microservices architecture
 - Serverless patterns
 - Advanced React performance
