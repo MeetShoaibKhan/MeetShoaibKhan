@@ -1,4 +1,10 @@
-# ✨ Shoaib Khan 
+<!-- ![card](https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg) -->
+
+![card1](./SVGs/codeMatrix.svg)
+
+<!-- ![card1](./SVGs/shapes.svg) -->
+
+# ✨ Shoaib Khan
 
 **Full-Stack Developer** | **JavaScript Specialist** | **Problem Solver**
 
@@ -6,10 +12,10 @@ Building elegant solutions with modern web technologies. Passionate about clean 
 
 ---
 
-### 🛠️  Tech Stack
+### 🛠️ Tech Stack
 
 **Frontend**  
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white) 
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white)
 
@@ -25,7 +31,8 @@ Building elegant solutions with modern web technologies. Passionate about clean 
 
 ---
 
-### 🌱  Currently Growing In
+### 🌱 Currently Growing In
+
 - Next.js framework
 - Microservices architecture
 - Serverless patterns
@@ -33,7 +40,7 @@ Building elegant solutions with modern web technologies. Passionate about clean 
 
 ---
 
-### 📬  Let's Connect
+### 📬 Let's Connect
 
 [![LinkedIn](https://img.shields.io/badge/-Let's%20Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/shoaibkhan7)
 [![Email](https://img.shields.io/badge/-Email%20Me-D14836?style=for-the-badge&logo=gmail)](mailto:meetshoaibkhan1@gmail.com)
