@@ -1,0 +1,92 @@
+<svg width="100%" height="200" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="geoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1"/>
+    </linearGradient>
+    
+    <linearGradient id="shapeGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#ffd93d;stop-opacity:0.8"/>
+    </linearGradient>
+    
+    <linearGradient id="shapeGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#44a08d;stop-opacity:0.7"/>
+    </linearGradient>
+    
+    <linearGradient id="shapeGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#geoBg)"/>
+  
+  <!-- Animated geometric shapes -->
+  <polygon points="100,80 140,40 180,80 140,120" fill="url(#shapeGrad1)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      values="0 140 80;360 140 80" dur="8s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <circle cx="300" cy="100" r="40" fill="url(#shapeGrad2)" opacity="0.7">
+    <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <rect x="450" y="60" width="80" height="80" fill="url(#shapeGrad3)" rx="10">
+    <animateTransform attributeName="transform" type="rotate" 
+                      values="0 490 100;45 490 100;0 490 100" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Hexagon -->
+  <polygon points="650,70 680,55 710,70 710,100 680,115 650,100" fill="url(#shapeGrad1)" opacity="0.8">
+    <animateTransform attributeName="transform" type="scale" 
+                      values="1 1;1.2 1.2;1 1" dur="2.5s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Triangle -->
+  <polygon points="850,60 810,120 890,120" fill="url(#shapeGrad2)">
+    <animateTransform attributeName="transform" type="rotate" 
+                      values="0 850 100;-360 850 100" dur="6s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Pentagon -->
+  <polygon points="1000,70 1025,50 1045,75 1035,105 1005,105" fill="url(#shapeGrad3)" opacity="0.9">
+    <animateTransform attributeName="transform" type="rotate" 
+                      values="0 1025 82.5;360 1025 82.5" dur="5s" repeatCount="indefinite"/>
+  </polygon>
+  
+  <!-- Connecting lines with animation -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.3" fill="none">
+    <line x1="180" y1="80" x2="260" y2="100">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="340" y1="100" x2="450" y2="100">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="530" y1="100" x2="650" y2="85">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="710" y1="85" x2="810" y2="100">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="890" y1="100" x2="1000" y2="87">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/>
+    </line>
+  </g>
+  
+  <!-- Background particles -->
+  <g opacity="0.4">
+    <circle cx="50" cy="30" r="2" fill="#ff6b6b">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1150" cy="170" r="3" fill="#4ecdc4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="170" r="1.5" fill="#667eea">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
