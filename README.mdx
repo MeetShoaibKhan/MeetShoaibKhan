@@ -1,0 +1,347 @@
+import { useState, useEffect } from "react";
+
+export const WaveEmoji = () => {
+  const [wave, setWave] = useState(false);
+
+  return (
+    <span
+      className="inline-block cursor-pointer select-none"
+      style={{
+        animation: wave ? "wave 0.6s ease-in-out" : "none",
+        transformOrigin: "70% 70%",
+      }}
+      onClick={() => {
+        setWave(true);
+        setTimeout(() => setWave(false), 600);
+      }}
+    >
+      👋
+    </span>
+  );
+};
+
+export const TypingAnimation = ({ text, speed = 100 }) => {
+  const [displayText, setDisplayText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
+      }, speed);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, speed]);
+
+  return (
+    <span>
+      {displayText}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+};
+
+export const TechBadge = ({ name, color, logo, children }) => (
+  <img
+    src={`https://img.shields.io/badge/-${name}-${color}?style=flat-square&logo=${logo}&logoColor=white`}
+    alt={name}
+    className="inline-block mr-2 mb-2 hover:scale-105 transition-transform duration-200 cursor-pointer"
+  />
+);
+
+export const AnimatedSection = ({ children, delay = 0 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  return (
+    <div
+      className={`transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const SkillMeter = ({ skill, level }) => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setWidth(level), 500);
+    return () => clearTimeout(timer);
+  }, [level]);
+
+  return (
+    <div className="mb-3">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-sm font-medium">{skill}</span>
+        <span className="text-xs text-gray-600">{level}%</span>
+      </div>
+      <div className="w-full bg-gray-200 rounded-full h-2">
+        <div
+          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
+          style={{ width: `${width}%` }}
+        />
+      </div>
+    </div>
+  );
+};
+
+<style jsx>{`
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .gradient-text {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 3s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+`}</style>
+
+<div className="max-w-4xl mx-auto p-6 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+
+# <WaveEmoji /> Hey there, I'm **Shoaib Khan**
+
+<div className="text-xl mb-8 text-gray-700">
+  <TypingAnimation
+    text="Full-Stack Developer | JavaScript Specialist | Problem Solver"
+    speed={50}
+  />
+</div>
+
+<AnimatedSection delay={300}>
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover mb-8">
+    <p className="text-lg leading-relaxed text-gray-700">
+      Building{" "}
+      <span className="gradient-text font-bold">elegant solutions</span> with
+      modern web technologies. Passionate about clean architecture and
+      performant applications that make a difference.
+    </p>
+  </div>
+</AnimatedSection>
+
+---
+
+<AnimatedSection delay={500}>
+
+## 🛠️ Tech Arsenal
+
+<div className="grid md:grid-cols-3 gap-6 mb-8">
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover">
+    <h3 className="text-xl font-bold mb-4 text-blue-600">🎨 Frontend</h3>
+    <div className="flex flex-wrap">
+      <TechBadge name="React" color="61DAFB" logo="react" />
+      <TechBadge name="JavaScript" color="F7DF1E" logo="javascript" />
+      <TechBadge name="Redux" color="764ABC" logo="redux" />
+      <TechBadge name="TypeScript" color="3178C6" logo="typescript" />
+      <TechBadge name="Tailwind CSS" color="38B2AC" logo="tailwind-css" />
+    </div>
+  </div>
+
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover">
+    <h3 className="text-xl font-bold mb-4 text-green-600">⚡ Backend</h3>
+    <div className="flex flex-wrap">
+      <TechBadge name="Node.js" color="339933" logo="node.js" />
+      <TechBadge name="Express" color="000000" logo="express" />
+      <TechBadge name="NestJS" color="E0234E" logo="nestjs" />
+      <TechBadge name="GraphQL" color="E10098" logo="graphql" />
+    </div>
+  </div>
+
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover">
+    <h3 className="text-xl font-bold mb-4 text-purple-600">☁️ Data & Cloud</h3>
+    <div className="flex flex-wrap">
+      <TechBadge name="AWS" color="232F3E" logo="amazon-aws" />
+      <TechBadge name="MySQL" color="4479A1" logo="mysql" />
+      <TechBadge name="MongoDB" color="47A248" logo="mongodb" />
+      <TechBadge name="Redis" color="DC382D" logo="redis" />
+    </div>
+  </div>
+</div>
+
+</AnimatedSection>
+
+---
+
+<AnimatedSection delay={700}>
+
+## 📊 Skill Levels
+
+<div className="bg-white rounded-xl p-6 shadow-lg card-hover mb-8">
+  <div className="grid md:grid-cols-2 gap-8">
+    <div>
+      <SkillMeter skill="JavaScript/TypeScript" level={95} />
+      <SkillMeter skill="React/Next.js" level={90} />
+      <SkillMeter skill="Node.js" level={85} />
+      <SkillMeter skill="Database Design" level={80} />
+    </div>
+    <div>
+      <SkillMeter skill="AWS Services" level={75} />
+      <SkillMeter skill="System Architecture" level={80} />
+      <SkillMeter skill="DevOps/CI-CD" level={70} />
+      <SkillMeter skill="Problem Solving" level={95} />
+    </div>
+  </div>
+</div>
+
+</AnimatedSection>
+
+---
+
+<AnimatedSection delay={900}>
+
+## 🌱 Currently Growing In
+
+<div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white shadow-lg card-hover mb-8">
+  <div className="grid md:grid-cols-2 gap-4">
+    <div className="flex items-center space-x-3">
+      <span className="text-2xl">⚡</span>
+      <span className="font-medium">Next.js 14 & App Router</span>
+    </div>
+    <div className="flex items-center space-x-3">
+      <span className="text-2xl">🏗️</span>
+      <span className="font-medium">Microservices Architecture</span>
+    </div>
+    <div className="flex items-center space-x-3">
+      <span className="text-2xl">🚀</span>
+      <span className="font-medium">Serverless Patterns</span>
+    </div>
+    <div className="flex items-center space-x-3">
+      <span className="text-2xl">⚡</span>
+      <span className="font-medium">Advanced React Performance</span>
+    </div>
+  </div>
+</div>
+
+</AnimatedSection>
+
+---
+
+<AnimatedSection delay={1100}>
+
+## 📈 GitHub Stats
+
+<div className="grid md:grid-cols-2 gap-6 mb-8">
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover">
+    <img
+      src="https://github-readme-stats.vercel.app/api?username=shoaibkhan7&show_icons=true&theme=default&hide_border=true"
+      alt="GitHub Stats"
+      className="w-full"
+    />
+  </div>
+  <div className="bg-white rounded-xl p-6 shadow-lg card-hover">
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=shoaibkhan7&layout=compact&theme=default&hide_border=true"
+      alt="Top Languages"
+      className="w-full"
+    />
+  </div>
+</div>
+
+</AnimatedSection>
+
+---
+
+<AnimatedSection delay={1300}>
+
+## 📬 Let's Build Something Amazing Together
+
+<div className="bg-white rounded-xl p-8 shadow-lg card-hover text-center">
+  <p className="text-lg text-gray-700 mb-6">
+    Always excited to collaborate on innovative projects and discuss new
+    opportunities!
+  </p>
+
+  <div className="flex flex-wrap justify-center gap-4">
+    <a
+      href="https://linkedin.com/in/shoaibkhan7"
+      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 transform hover:scale-105"
+    >
+      <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+      Let's Connect
+    </a>
+
+    <a
+      href="mailto:meetshoaibkhan1@gmail.com"
+      className="inline-flex items-center px-6 py-3 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-colors duration-200 transform hover:scale-105"
+    >
+      <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.728L12 9.545l9.636-5.724h.728c.904 0 1.636.732 1.636 1.636z" />
+      </svg>
+      Email Me
+    </a>
+  </div>
+
+  <div className="mt-6 text-sm text-gray-500">
+    💡 Open to freelance projects and full-time opportunities
+  </div>
+</div>
+
+</AnimatedSection>
+
+---
+
+<div className="text-center py-8">
+  <p className="text-gray-600">
+    ⭐ <strong>Thanks for visiting!</strong> Don't forget to star repositories
+    you find interesting
+  </p>
+</div>
+
+</div>
